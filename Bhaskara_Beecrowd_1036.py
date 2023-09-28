@@ -1,11 +1,21 @@
+# -*- coding: iso-8859-1 -*-
 
-lista = []
-for i in range(3):
-    lista[i] = int(input(""))
+from math import sqrt
 
-DELTA = lista[2] - 4*lista[1]*lista[3]
+texto = input('')
+lista = texto.split()
+a = float(lista[0])
+b = float(lista[1])
+c = float(lista[2])
 
-X1 = (-lista[2] +DELTA) /(2*lista[1])
-X2 = (-lista[2] -DELTA) / (2*lista[1])
+DELTA = b**2 - 4*a*c
 
-print(f"{X1} {X2}")
+if DELTA < 0:
+    print("Impossivel calcular.")
+else:
+    if a == 0:
+        print("Impossivel calcular.")
+    else:
+        X1 = (-b + sqrt(DELTA)) /(2*a)
+        X2 = (-b - sqrt(DELTA)) / (2*a)
+        print(f"R1 = {X1:.5f}\nR2 = {X2:.5f}")
